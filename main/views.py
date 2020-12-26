@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.apps import apps
 from django.utils import timezone
-from django.db.models import Q
 
 Story = apps.get_model('main', 'Story')
 
