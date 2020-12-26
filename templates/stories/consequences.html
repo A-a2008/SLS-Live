@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Consequences</h1>
+    <font size='5'><h3>Here are the <b>consequences</b> faced by some students.</h3></font>
+</header>
+<br />
+<ul>
+    {% for consequence in consequences %}
+    <div class="box">
+        <li><a href="/story/each-story/{{ consequence.id }}" target="_blank">{{ consequence.title }}</a></p></li>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}

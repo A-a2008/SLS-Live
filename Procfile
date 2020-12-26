@@ -1,0 +1,1 @@
+web: gunicorn LifeStories.wsgi --log-file -

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Login to Students' Life Stories:</h1>
+</header>
+<br />
+<form action="/accounts/login/" method="post">
+    {% csrf_token %}
+    {% for message in messages %}
+    <font color="red">{{ message }} <br /></font><br />
+    {% endfor %}
+    <font size="3">Not a User? <a href="/accounts/register">Register</a> yourself here</font><br /><br />
+    <input type="text" name="username" placeholder="Username" required ><br />
+    <input type="password" name="password" placeholder="Password" required ><br />
+    <input type='submit' class="button primary large" value="Login">
+</form>
+{% endblock %}

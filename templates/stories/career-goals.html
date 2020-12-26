@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Career Goals</h1>
+    <font size='5'><h3>Here all the students can find their way to succeed their goals</h3></font>
+</header>
+<br />
+<ul>
+    {% for goal in goals %}
+    <div class="box">
+        <li><a href="/story/each-story/{{ goal.id }}" target="_blank">{{ goal.title }}</a></p></li>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}

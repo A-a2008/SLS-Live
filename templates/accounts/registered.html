@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Register to Students' Life Stories:</h1>
+    <font size='5'><h3>Write articles for this website</h3></font>
+    <font size='4'><h3>You have been registered for this website</h3></font>
+</header>
+<br />
+<dl>
+    <dt>Your Details:</dt>
+    <b>
+        <dd>Name: {{ name }}</dd>
+        <dd>Username: {{ username }}</dd>
+        <dd>Email: {{ email }}</dd>
+    </b>
+</dl>
+
+<p><b>You have successfully registered yourself.. Please <a href="/account/login">login here</a></b></p>
+{% endblock %}

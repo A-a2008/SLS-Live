@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Student's Life Stories</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
+		<link rel="icon" href="{% static 'images/sls_logo.png' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="/" class="logo"><strong>Students' Life Stories</strong> for Students</a>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Students' Life Stories</h1>
+											<font size='5'><h3>for Students</h3></font>
+											<p>A place where you can see all the problems, consequences, opportunities and 
+                                                career goals written by the students, for the students</p>
+                                        </header>
+                                        <p></p>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Topics in this webiste</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="/problems" class="image"><img src="{% static 'images/problems.jpg' %}" alt="" /></a>
+											<h3>Problems</h3>
+											<p>In this category, there are the problems faced by some students.</p>
+											<ul class="actions">
+												<li><a href="/problems" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="/consequences" class="image"><img src="{% static 'images/consequences.jpg' %}" alt="" /></a>
+											<h3>Consequences</h3>
+											<p>Over here, there are the stories written by students after taking some decisions
+                                            </p>
+											<ul class="actions">
+												<li><a href="/consequences" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="/opportunities" class="image"><img src="{% static 'images/opportunities.jpg' %}" alt="" /></a>
+											<h3>Opportunities</h3>
+											<p>People who realy look forward with their hobbies can visit this category</p>
+											<ul class="actions">
+												<li><a href="/opportunities" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="/career-goals" class="image"><img src="{% static 'images/goals.jpg' %}" alt="" /></a>
+											<h3>Career Goal</h3>
+											<p>Look in to this category if you want to know how to achieve your goals.</p>
+											<ul class="actions">
+												<li><a href="/career-goals" class="button">More</a></li>
+											</ul>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- User -->
+								<section>
+									<header class="major">
+										<h2>User</h2>
+									</header>
+									<nav id="menu">
+										<ul>
+											{% if user.is_authenticated %}
+											<li>
+												<span class="opener">Hi, {{ user.first_name }}</span>
+												<ul>
+													<li><a href="/accounts/logout">Logout</a></li>
+													<li><a href="/stories/write">Write Stories</a></li>
+													{% if user.is_superuser %}
+													<li><a href="/admin" target="_blank">Admin Panel</a></li>
+													{% endif %}
+												</ul>
+											{% else %}
+											<li><a href="/accounts/register">Regsiter</a></li>
+											<li><a href="/accounts/login">Login</a></li>
+											{% endif %}
+										</ul>
+									</nav>
+								</section>
+
+							<!-- Write Stories -->
+							<section>
+								<header class="major">
+									<h2>Write Stories</h2>
+								</header>
+								<nav id="menu">
+									<ul>
+										<li><a href="/stories/how-to" target="_blank">How to write stories</a></li>
+									</ul>
+								</nav>
+							</section>
+
+							<!-- Get in touch -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Mail me if you want something more.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="mailto:aryan.rajalbandi@outlook.com">aryan.rajalbandi@outlook.com</a></li>
+									</ul>
+								</section>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

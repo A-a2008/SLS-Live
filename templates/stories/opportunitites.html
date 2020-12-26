@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Opportunities</h1>
+    <font size='5'><h3>Here are the <b>opportunities</b> for some students.</h3></font>
+</header>
+<br />
+<ul>
+    {% for opportunity in opportunities %}
+    <div class="box">
+        <li><a href="/story/each-story/{{ opportunity.id }}" target="_blank">{{ opportunity.title }}</a></p></li>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}

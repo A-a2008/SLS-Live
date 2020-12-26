@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Student's Life Stories</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
+		<link rel="icon" href="{% static 'images/sls_logo.png' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            
+							<!-- Header -->
+								<header id="header">
+									<a href="/" class="logo"><strong>Students' Life Stories</strong> for Students</a>
+								</header>
+
+                            <!-- Content -->
+								<section>
+									<header class="main">
+                                        <h1>{{ story.title }}</h1>
+                                        <font size='5'><h3>{{ story.subtitle }}</h3></font>
+									</header>
+									<br />
+									<p>
+                                        {{ story.content }}
+                                    </p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- User -->
+								<section>
+									<header class="major">
+										<h2>User</h2>
+									</header>
+									<nav id="menu">
+										<ul>
+											{% if user.is_authenticated %}
+											<li>
+												<span class="opener">Hi, {{ user.first_name }}</span>
+												<ul>
+													<li><a href="/accounts/logout">Logout</a></li>
+													<li><a href="/stories/write">Write Stories</a></li>
+													{% if user.is_superuser %}
+													<li><a href="/admin" target="_blank">Admin Panel</a></li>
+													{% endif %}
+												</ul>
+											{% else %}
+											<li><a href="/accounts/register">Regsiter</a></li>
+											<li><a href="/accounts/login">Login</a></li>
+											{% endif %}
+										</ul>
+									</nav>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<ul>
+                                        <li><a href="/">Homepage</a></li>
+									</ul>
+									<br />
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="/problems">Problems</a></li>
+										<li><a href="/consequences">Consequences</a>
+										<li><a href="/opportunities">Opportunities</a></li>
+										<li><a href="/career-goals">Career Goal</a></li>
+									</ul>
+								</nav>
+
+							<!-- Write Stories -->
+								<section>
+									<header class="major">
+										<h2>Write Stories</h2>
+									</header>
+									<nav id="menu">
+										<ul>
+											<li><a href="/stories/how-to" target="_blank">How to write stories</a></li>
+										</ul>
+									</nav>
+								</section>
+                                
+                            <!-- Get in touch -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Mail me if you want something more.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="mailto:aryan.rajalbandi@outlook.com">aryan.rajalbandi@outlook.com</a></li>
+									</ul>
+								</section>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

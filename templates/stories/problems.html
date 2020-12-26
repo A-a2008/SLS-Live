@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Problems</h1>
+    <font size='5'><h3>Here are the <b>problems</b> faced by some students.</h3></font>
+</header>
+<br />
+<ul>
+    {% for problem in problems %}
+    <div class="box">
+        <li><a href="/story/each-story/{{ problem.id }}" target="_blank">{{ problem.title }}</a></p></li>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}

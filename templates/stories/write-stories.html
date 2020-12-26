@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="main">
+    <h1>Write stories</h1>
+    <font size='5'><h3>Write stories on this site.</h3></font>
+</header>
+<blockquote>
+    <b>Note:</b> You cannot delete a post once it is created
+</blockquote>
+<form action="/stories/write/" method="post">
+    {% csrf_token %}
+    <label for="type">Choose a Story type:</label>
+    <select id="type" name='story_type'>
+        <option value="P">Problems</option>
+        <option value="C">Consequences</option>
+        <option value="O">Opportunities</option>
+        <option value="CG">Career Goal</option>
+    </select>
+    <br /><br />
+    <input type="text" name="title" placeholder="Title" required ><br />
+    <input type="text" name="subtitle" placeholder="Sub Title" required ><br />
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" rows="15" placeholder="Type Here" required ></textarea><br />
+    <input type="submit" class="button primary large" value="Submit">
+</form>
+{% endblock %}
